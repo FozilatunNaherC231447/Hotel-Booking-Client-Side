@@ -20,9 +20,9 @@ const Navbar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <nav className="bg-black text-white shadow-md relative z-50 lg:px-20 py-3">
+    <nav className="bg-black text-white shadow-md sticky top-0 z-50 px-6 md:px-12 lg:px-20 py-3">
       {/* Top Nav */}
-      <div className="px-6 py-4 flex justify-between items-center">
+      <div className="py-4 flex justify-between items-center">
         <Link
           to="/"
           className="text-3xl font-bold tracking-widest text-rose-400 hover:text-rose-500 transition-all duration-300"
@@ -37,16 +37,12 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6">
-          <Link to="/" className="hover:text-rose-400 text-2xl transition duration-200">
-            Home
-          </Link>
-          <Link to="/rooms" className="hover:text-rose-400 text-2xl transition duration-200">
-            Rooms
-          </Link>
+          <Link to="/" className="hover:text-rose-400 text-2xl transition duration-200">Home</Link>
+          <Link to="/rooms" className="hover:text-rose-400 text-2xl transition duration-200">Rooms</Link>
+          <Link to="/about" className="hover:text-rose-400 text-2xl transition duration-200">About</Link>
+          <Link to="/contact" className="hover:text-rose-400 text-2xl transition duration-200">Contact</Link>
           {user && (
-            <Link to="/my-bookings" className="hover:text-rose-400 text-2xl transition duration-200">
-              My Bookings
-            </Link>
+            <Link to="/my-bookings" className="hover:text-rose-400 text-2xl transition duration-200">My Bookings</Link>
           )}
           {user ? (
             <>
@@ -76,28 +72,12 @@ const Navbar = () => {
         }`}
       >
         <div className="px-6 pt-12 pb-6 flex flex-col gap-4">
-           <Link
-            to="/"
-            className="hover:text-rose-400 text-lg transition duration-200"
-            onClick={toggleMenu}
-          >
-            Home
-          </Link>
-          <Link
-            to="/rooms"
-            className="hover:text-rose-400 text-lg transition duration-200"
-            onClick={toggleMenu}
-          >
-            Rooms
-          </Link>
+          <Link to="/" className="hover:text-rose-400 text-lg transition duration-200" onClick={toggleMenu}>Home</Link>
+          <Link to="/rooms" className="hover:text-rose-400 text-lg transition duration-200" onClick={toggleMenu}>Rooms</Link>
+          <Link to="/about" className="hover:text-rose-400 text-lg transition duration-200" onClick={toggleMenu}>About</Link>
+          <Link to="/contact" className="hover:text-rose-400 text-lg transition duration-200" onClick={toggleMenu}>Contact</Link>
           {user && (
-            <Link
-              to="/my-bookings"
-              className="hover:text-rose-400 text-lg transition duration-200"
-              onClick={toggleMenu}
-            >
-              My Bookings
-            </Link>
+            <Link to="/my-bookings" className="hover:text-rose-400 text-lg transition duration-200" onClick={toggleMenu}>My Bookings</Link>
           )}
           {user ? (
             <>

@@ -9,13 +9,14 @@ import MyBookings from "./pages/MyBookings";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import About from "./pages/About";
 import PrivateRoute from "./routes/PrivateRoute";
 import ScrollToTop from "./components/ScrollToTop";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-  // Set document title globally
+
   useEffect(() => {
     document.title = "StayEase | Hotel Booking Platform";
   }, []);
@@ -28,6 +29,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/rooms" element={<Rooms />} />
         <Route path="/room/:id" element={<RoomDetails />} />
+        <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 

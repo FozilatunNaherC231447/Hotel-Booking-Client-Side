@@ -1,15 +1,21 @@
 import { Link } from "react-router-dom";
-
+import error from "../assets/error.png";
 export default function NotFound() {
   return (
-    <div className="text-center p-10">
+    <div className="bg-[#0f0f0f] text-white min-h-screen flex flex-col justify-center items-center px-6 text-center">
       <img
-        src="https://media.giphy.com/media/14uQ3cOFteDaU/giphy.gif"
-        alt="404"
-        className="mx-auto"
+        src={error} 
+        alt="404 - Not Found"
+        className="w-80 h-auto mb-8"
       />
-      <h2 className="text-xl font-bold mt-4">404 - Page Not Found</h2>
-      <Link to="/" className="mt-3 inline-block bg-blue-500 text-white px-4 py-2 rounded">
+      <h1 className="text-4xl font-bold text-rose-500 mb-2">404 - Page Not Found</h1>
+      <p className="text-gray-400 text-lg mb-6 max-w-md">
+        Oops! The page you’re looking for doesn’t exist or has been moved.
+      </p>
+      <Link
+        to="/"
+        className="bg-rose-500 hover:bg-rose-600 text-white px-6 py-3 rounded-xl transition duration-300 font-medium"
+      >
         Back to Home
       </Link>
     </div>

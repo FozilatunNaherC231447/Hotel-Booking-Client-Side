@@ -54,13 +54,13 @@ export default function Home() {
     fetch("https://hotel-booking-platform-server-pi.vercel.app/api/rooms")
       .then((res) => res.json())
       .then((data) => {
-        // Only include rooms that have at least one review
+
         const roomsWithReviews = data.filter(
           (room) => Array.isArray(room.reviews) && room.reviews.length > 0
         );
         setRooms(roomsWithReviews);
         setLoadingRooms(false);
-        setLoadingReviews(false); // Since reviews are embedded in rooms
+        setLoadingReviews(false); 
       })
       .catch((err) => {
         console.error("Error fetching rooms:", err);
